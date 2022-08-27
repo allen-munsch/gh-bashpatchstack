@@ -80,6 +80,45 @@ Creating draft pull request for 5063cb25cabd00a45217705430bfda127f419444 into f0
 
 ```
 
+#### other example stacking onto main instead of a feature branch
+
+```
+gh-bps main jm/stacked/integrations
+
+#########
+base main
+head jm/stacked/integrations
+########
+
+#########   stack   ########
+5063cb25cabd00a45217705430bfda127f419444 refs/heads/main
+f0ab778d97b36b3506654873114cfc4e91027cd5 refs/heads/jm/stacked/integrations/1
+f7d687eb8e48d0286dca55c23bc16cf2d6393699 refs/heads/jm/stacked/integrations/2
+12ecf8e456f3d33c225ae7c513c94845c434113b refs/heads/jm/stacked/integrations/3
+############################
+
+###### dry run #######
+setting prev_hash
+gh pr create 
+ --title "prev: refs/heads/main next: refs/heads/jm/stacked/integrations/1" 
+ --draft 
+ --base "refs/heads/main" 
+ --head "refs/heads/jm/stacked/integrations/1"
+gh pr create 
+ --title "prev: refs/heads/jm/stacked/integrations/1 next: refs/heads/jm/stacked/integrations/2" 
+ --draft 
+ --base "refs/heads/jm/stacked/integrations/1" 
+ --head "refs/heads/jm/stacked/integrations/2"
+gh pr create 
+ --title "prev: refs/heads/jm/stacked/integrations/2 next: refs/heads/jm/stacked/integrations/3" 
+ --draft 
+ --base "refs/heads/jm/stacked/integrations/2" 
+ --head "refs/heads/jm/stacked/integrations/3"
+#################
+If you're okay with this then do:
+    bash ./stacked.run
+```
+
 # Debugging
 
 ```
