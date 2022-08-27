@@ -26,14 +26,15 @@ do
 		echo setting prev_hash
 		prev_hash="$(echo $LINE | awk '{ print $1 }')"
 		prev_branch="$(echo $LINE | awk '{ print $2 }')"
+		git push origin "$prev_branch"
         else
 		next_hash="$(echo $LINE | awk '{ print $1 }')"
 		next_branch="$(echo $LINE | awk '{ print $2 }')"
 		echo gh pr create \
 		--title \""prev: $prev_branch next: $next_branch"\" \
 		--draft \
-		--head \""$next_hash"\" \
-		--base \""$prev_hash"\" | tee -a stacked.dry_run
+		--head \""$next_branch"\" \
+		--base \""$prev_branch"\" | tee -a stacked.dry_run
 		prev_hash="$next_hash"
 		prev_branch="$next_branch"
 	fi
