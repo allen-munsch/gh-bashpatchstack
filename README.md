@@ -4,7 +4,8 @@ super simple git patch stack using bash and gh cli to open a patch stack on gith
 ### install dependency gh cli
 
 ```
-sudo apt install gh
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
 gh auth login
 
 # loading spinner icon *elevator music*
