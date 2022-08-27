@@ -46,3 +46,22 @@ gh pr create --title prev: refs/heads/jm/stacked/integrations/2 next: refs/heads
 If you're okay with this then do:
     bash ./stacked.run
 ```
+
+# docs
+
+- https://cli.github.com/manual/gh_pr_create
+- https://git-scm.com/docs/git-show-ref
+
+
+# why
+
+Because github doesn't do this well
+
+
+# TODO
+
+- push changes to stack start, mid stack, etc, and sync changes
+    - given an $UPDATED_COMMIT and known stacked.dry_run
+    - cat rest_of_stack | xargs -INEXT_PR git checkout $NEXT_PR && git pull origin $UPDATED_COMMMIT  # default pull.rebase=false 
+    - 
+    - or pull.rebase=true
