@@ -1,6 +1,9 @@
 # gh-bashpatchstack
 super simple git patch stack using bash and gh cli to open a patch stack on github
 
+![2022-08-27_18-19](https://user-images.githubusercontent.com/33908344/187051223-017b78cc-c35f-485a-964f-67fc6a920402.png)
+
+
 ### install dependency gh cli
 
 ```
