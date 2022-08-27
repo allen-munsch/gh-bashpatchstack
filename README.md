@@ -72,11 +72,14 @@ Creating draft pull request for 5063cb25cabd00a45217705430bfda127f419444 into f0
 
 # why
 
-Because github doesn't do this well
+Because github doesn't do this well?
+
+PRs are too big sometimes ( * cough * definitely not my PRs ) ... and, welp, reviewing big PRs is hard, well hard for me anyways.
 
 Also, but why?
 
 - https://jg.gg/2018/09/29/stacked-diffs-versus-pull-requests/
+
 
 
 # TODO
