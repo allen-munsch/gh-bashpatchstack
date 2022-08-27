@@ -47,10 +47,13 @@ If you're okay with this then do:
     bash ./stacked.run
 ```
 
-Example running the templated code:
+Example running the first one will establish the start of the stack, each following PR created points to the previous as its base:
 
 ```
-05:24:45 (venv_3_9_10) jm@pop-os clowntown ±|jm/stacked/integrations/3 ✗|→ gh pr create --title "prev: refs/heads/AA-2054-feature-branch-1 next: refs/heads/jm/stacked/integrations/1" --draft --head "5063cb25cabd00a45217705430bfda127f419444" --base "f0ab778d97b36b3506654873114cfc4e91027cd5"
+gh pr create --title "prev: refs/heads/AA-2054-feature-branch-1 next: refs/heads/jm/stacked/integrations/1" --draft \
+--head "5063cb25cabd00a45217705430bfda127f419444" \
+--base "f0ab778d97b36b3506654873114cfc4e91027cd5"
+
 Warning: 5 uncommitted changes
 
 Creating draft pull request for 5063cb25cabd00a45217705430bfda127f419444 into f0ab778d97b36b3506654873114cfc4e91027cd5 in Clown-Town/clowntown
