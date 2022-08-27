@@ -30,10 +30,10 @@ do
 		next_hash="$(echo $LINE | awk '{ print $1 }')"
 		next_branch="$(echo $LINE | awk '{ print $2 }')"
 		echo gh pr create \
-		--title "prev: $prev_branch next: $next_branch" \
+		--title \""prev: $prev_branch next: $next_branch"\" \
 		--draft \
-		--head "$prev_hash" \
-		--base "$next_hash" | tee -a stacked.dry_run
+		--head \""$prev_hash"\" \
+		--base \""$next_hash"\" | tee -a stacked.dry_run
 		prev_hash="$next_hash"
 		prev_branch="$next_branch"
 	fi
