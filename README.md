@@ -65,6 +65,12 @@ Creating draft pull request for 5063cb25cabd00a45217705430bfda127f419444 into f0
 
 ```
 
+# Debugging
+
+```
+DEBUG=api ./stacked.run
+```
+
 # docs
 
 - https://cli.github.com/manual/gh_pr_create
