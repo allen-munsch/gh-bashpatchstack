@@ -57,6 +57,10 @@ If you're okay with this then do:
 
 Because github doesn't do this well
 
+Also, but why?
+
+- https://jg.gg/2018/09/29/stacked-diffs-versus-pull-requests/
+
 
 # TODO
 
