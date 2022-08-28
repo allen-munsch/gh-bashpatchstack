@@ -28,7 +28,7 @@ cd -
 ### to the project git repo 
 
 ```
-04:30:49 (venv_3_9_10) jm@pop-os clowntown ±|jm/stacked/integrations/3 ✗|→ gh-bps AA-2054-feature-branch-1 jm/stacked/integrations
+04:30:49 (venv_3_9_10) jm@pop-os clowntown ±|jm/stacked/integrations/3 ✗|→ gh-bps -B AA-2054-feature-branch-1  -H jm/stacked/integrations
 #########
 base AA-2054-feature-branch-1
 head jm/stacked/integrations
@@ -83,7 +83,7 @@ Creating draft pull request for 5063cb25cabd00a45217705430bfda127f419444 into f0
 #### other example stacking onto main instead of a feature branch
 
 ```
-gh-bps main jm/stacked/integrations
+gh-bps -B main -H jm/stacked/integrations
 
 #########
 base main
