@@ -61,9 +61,8 @@ echo head $HEAD
 echo "########"
 echo
 
-
-git --no-pager show-ref --heads | grep "$BASE" >| stacked
-git --no-pager show-ref --heads | grep "$HEAD" >> stacked
+git for-each-ref --sort=committerdate refs/heads/ | sed 's/ commit//g' | grep "$BASE" >| stacked
+git for-each-ref --sort=committerdate refs/heads/ |  sed 's/ commit//g' | grep "$HEAD" >> stacked
 
 echo '#########   stack   ########'
 cat stacked
@@ -99,6 +98,23 @@ EOF
 
 	fi
 done < stacked
+
+# if there is only 1 stack item
+if [ -z "$(cat stacked.dry_run)" ]
+then
+	next_hash="$(cat stacked | awk '{ print $1 }')"
+	next_branch="$(cat stacked | awk '{ print $2 }')"
+        tee -a stacked.dry_run <<EOF
+gh pr create \
+--title "prev: $prev_branch next: $next_branch" \
+--draft \
+--base "$prev_branch" \
+--head "$next_branch"
+
+EOF
+fi
+
+
 echo '#################'
 
 cp stacked.dry_run stacked.run
