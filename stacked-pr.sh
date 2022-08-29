@@ -61,9 +61,8 @@ echo head $HEAD
 echo "########"
 echo
 
-
-git --no-pager show-ref --heads | grep "$BASE" >| stacked
-git --no-pager show-ref --heads | grep "$HEAD" >> stacked
+git for-each-ref --sort=committerdate refs/heads/ | sed 's/ commit//g' | grep "$BASE" >| stacked
+git for-each-ref --sort=committerdate refs/heads/ |  sed 's/ commit//g' | grep "$HEAD" >> stacked
 
 echo '#########   stack   ########'
 cat stacked
@@ -99,6 +98,7 @@ EOF
 
 	fi
 done < stacked
+
 echo '#################'
 
 cp stacked.dry_run stacked.run
