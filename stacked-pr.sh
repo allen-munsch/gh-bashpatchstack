@@ -99,20 +99,25 @@ EOF
 	fi
 done < stacked
 
-# if there is only 1 stack item
-if [ -z "$(cat stacked.dry_run)" ]
-then
-	next_hash="$(cat stacked | awk '{ print $1 }')"
-	next_branch="$(cat stacked | awk '{ print $2 }')"
-        tee -a stacked.dry_run <<EOF
-gh pr create \
---title "prev: $prev_branch next: $next_branch" \
---draft \
---base "$prev_branch" \
---head "$next_branch"
+# # if there is only 1 stack item
+# if [ -z "$(cat stacked.dry_run)" ]
+# then
+# 	prev=$(git for-each-ref --sort=committerdate refs/heads/ | sed 's/ commit//g' | grep "$BASE")
+# 	echo $prev
+# 	exit 1;
+# 	prev_branch=$(echo $prev | awk '{ print $1}')
+# 	prev_hash=$(echo $prev | awk '{ print $2 }')
+# 	next_hash="$(cat stacked | awk '{ print $1 }')"
+# 	next_branch="$(cat stacked | awk '{ print $2 }')"
+#         tee -a stacked.dry_run <<EOF
+# gh pr create \
+# --title "prev: $prev_branch next: $next_branch" \
+# --draft \
+# --base "$prev_branch" \
+# --head "$next_branch"
 
-EOF
-fi
+# EOF
+# fi
 
 
 echo '#################'
