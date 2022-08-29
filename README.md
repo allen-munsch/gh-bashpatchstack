@@ -128,7 +128,7 @@ DEBUG=api ./stacked.run
 # docs
 
 - https://cli.github.com/manual/gh_pr_create
-- https://git-scm.com/docs/git-show-ref
+- https://git-scm.com/docs/git-for-each-ref
 
 
 # why
