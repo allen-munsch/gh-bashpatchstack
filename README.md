@@ -145,6 +145,7 @@ Also, but why?
 
 # TODO
 
+- This in conjuction with: https://github.com/arxanas/git-branchless ?
 - push changes to stack start, mid stack, etc, and sync changes
     - given an $UPDATED_COMMIT and known stacked.dry_run
     - cat rest_of_stack | xargs -INEXT_PR git checkout $NEXT_PR && git pull origin $UPDATED_COMMMIT  # default pull.rebase=false 
@@ -156,3 +157,4 @@ Also, but why?
 - template editing, etc
 - setting up `CODEOWNERS` for automatic reviewer tagging
   - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
