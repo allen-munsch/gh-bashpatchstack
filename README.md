@@ -146,6 +146,7 @@ Also, but why?
 # TODO
 
 - This in conjuction with: https://github.com/arxanas/git-branchless ?
+  - https://github.com/allen-munsch/gh-bashpatchstack
 - push changes to stack start, mid stack, etc, and sync changes
     - given an $UPDATED_COMMIT and known stacked.dry_run
     - cat rest_of_stack | xargs -INEXT_PR git checkout $NEXT_PR && git pull origin $UPDATED_COMMMIT  # default pull.rebase=false 
