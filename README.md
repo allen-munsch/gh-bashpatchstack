@@ -158,6 +158,11 @@ Also, but why?
 - setting up `CODEOWNERS` for automatic reviewer tagging
   - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
   
+
+
+### example helpers to implement
+
+```
  3797  2022-08-05 18:27:36 git --no-pager diff --name-only | xargs -I{} git checkout main -- {}
  3798  2022-08-05 18:27:47 git --no-pager diff --name-only | xargs -I{} git checkout main -- {}
  3804  2022-08-05 18:29:48 git --no-pager diff main --name-only | grep png | xargs -I{} git checkout main -- {}
@@ -178,5 +183,5 @@ Also, but why?
  4388  2022-08-29 15:32:20 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} -F edit.tmpl
  4391  2022-08-29 15:33:34 cat ok | jq ".url" | xargs -I{} echo gh pr ready {}
  4393  2022-08-29 15:34:18 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} --add-reviewer xyz
-
+```
 
