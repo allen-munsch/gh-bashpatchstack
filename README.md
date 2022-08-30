@@ -157,4 +157,26 @@ Also, but why?
 - template editing, etc
 - setting up `CODEOWNERS` for automatic reviewer tagging
   - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+  
+ 3797  2022-08-05 18:27:36 git --no-pager diff --name-only | xargs -I{} git checkout main -- {}
+ 3798  2022-08-05 18:27:47 git --no-pager diff --name-only | xargs -I{} git checkout main -- {}
+ 3804  2022-08-05 18:29:48 git --no-pager diff main --name-only | grep png | xargs -I{} git checkout main -- {}
+ 4051  2022-08-19 08:48:15 git --no-pager status | awk '{ print $1 }' | xargs -I{} git checkout main -- {}
+ 4054  2022-08-19 08:48:57 git --no-pager status | awk '{ print $1 }' | xargs -I{} rm -- {}
+ 4366  2022-08-29 12:44:13 tac okay | xargs -I{} bash -c 'git checkout {} && git pull origin AA-2054-feature-branch-1 && git push origin {}'
+ 4388  2022-08-29 15:32:20 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} -F edit.tmpl
+ 4391  2022-08-29 15:33:34 cat ok | jq ".url" | xargs -I{} echo gh pr ready {}
+ 4393  2022-08-29 15:34:18 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} --add-reviewer xyz
+ 4366  2022-08-29 12:44:13 tac okay | xargs -I{} bash -c 'git checkout {} && git pull origin AA-2054-feature-branch-1 && git push origin {}'
+ 4358  2022-08-29 10:35:24 cat okay | xargs -I{} bash -c 'git checkout {} && git pull origin AA-2054-feature-branch-1 && git push origin {}'
+ 4359  2022-08-29 10:35:41 nano okay
+ 4365  2022-08-29 12:44:03 tac okay
+ 4366  2022-08-29 12:44:13 tac okay | xargs -I{} bash -c 'git checkout {} && git pull origin AA-2054-feature-branch-1 && git push origin {}'
+ 4384  2022-08-29 15:29:14 echo >| ok ; gh pr list -d --json id,url,title -q '.[]|select(.title | contains("prev: refs/heads/jm/stack"))' | tee -a ok
+ 4385  2022-08-29 15:29:31 echo >| ok ; gh pr list -d --json id,url,title -q '.[]|select(.title | contains("jm/stack"))' | tee -a ok
+ 4386  2022-08-29 15:29:49 echo >| ok ; gh pr list --json id,url,title -q '.[]|select(.title | contains("jm/stack"))' | tee -a ok
+ 4388  2022-08-29 15:32:20 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} -F edit.tmpl
+ 4391  2022-08-29 15:33:34 cat ok | jq ".url" | xargs -I{} echo gh pr ready {}
+ 4393  2022-08-29 15:34:18 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} --add-reviewer xyz
+
 
