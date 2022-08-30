@@ -150,3 +150,9 @@ Also, but why?
     - cat rest_of_stack | xargs -INEXT_PR git checkout $NEXT_PR && git pull origin $UPDATED_COMMMIT  # default pull.rebase=false 
     - 
     - or pull.rebase=true
+- helper functions for upstack, downstack code changes
+  - git --no-pager diff --name-only $UPSTACK_OR_DOWNSTACK_BRANCH | xargs -I{} git checkout $UPSTACK_OR_DOWNSTACK_BRANCH -- {}
+- helper functions to pull changes up, or down the stack from remote, or origin
+- template editing, etc
+- setting up `CODEOWNERS` for automatic reviewer tagging
+  - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
