@@ -186,3 +186,6 @@ Also, but why?
  4393  2022-08-29 15:34:18 cat ok | jq ".url" | xargs -I{} echo gh pr edit {} --add-reviewer xyz
 ```
 
+### pull request create failed: GraphQL: Head sha can't be blank, Base sha can't be blank, No commits between jm/stack/integration/3.base and jm/stack/integration/3.base-try-fix-flaky-test, Head ref must be a branch (createPullRequest)
+
+- push the head branch
