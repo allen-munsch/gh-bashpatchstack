@@ -28,7 +28,9 @@ cd -
 ### to the project git repo 
 
 ```
-04:30:49 (venv_3_9_10) jm@pop-os clowntown ±|jm/stacked/integrations/3 ✗|→ gh-bps -B AA-2054-feature-branch-1  -H jm/stacked/integrations
+04:30:49 (venv_3_9_10) jm@pop-os clowntown ±|jm/stacked/integrations/3 -
+✗|→ gh-bps -B AA-2054-feature-branch-1  -H jm/stacked/integrations
+
 #########
 base AA-2054-feature-branch-1
 head jm/stacked/integrations
