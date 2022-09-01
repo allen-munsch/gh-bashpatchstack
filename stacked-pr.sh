@@ -7,7 +7,8 @@ RED='\033[0;31m'
 function usage() {
   echo -e "${RED}Usage:${CLEAR} [-B --base] [-H --head] [-h --help]"
   echo "  -B, --base               base branch to merge into"
-  echo "  -H, --head           head the working branch with code changes"
+  echo "  -H, --head               head the working branch with code changes"
+  echo "  -U, --pull-up            pull/merge a branch up a stack"
   echo "  -h, --help               print this help"
   echo ""
   echo "Example: $0 --base main --head jm/stacked/integrations"
@@ -28,6 +29,11 @@ while [[ $# -gt 0 ]]; do
        shift # arg
        shift # val
        ;;
+     -U|--pull-up)
+       UPSTACK="$2"
+       shift # arg
+       shift # val
+       ;;
      -h|--help)
        usage
        exit 0
@@ -45,6 +51,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
+
+if [ -n "$UPSTACK" ];then
+	tac stacked | awk '{ $2 }' | sed 's:refs/heads/::g' | xargs  -I{} bash -c "echo git checkout {} && git pull origin $UPSTACK && git push origin {}"
+	exit 0
+fi
 
 if [ -z "$BASE" ];then
 	usage
